@@ -1,6 +1,4 @@
 import Tron from "reactotron-react-native"
-import { RootStore } from "../../app/root-store"
-import { onSnapshot } from "mobx-state-tree"
 import { ReactotronConfig, DEFAULT_REACTOTRON_CONFIG } from "./reactotron-config"
 import { mst } from "reactotron-mst"
 import { commandMiddleware } from "./command-middleware"
@@ -76,25 +74,22 @@ export class Reactotron {
    */
   setRootStore(rootStore: any, initialData: any) {
     if (__DEV__) {
-      rootStore = rootStore as RootStore // typescript hack
-      this.rootStore = rootStore
-
-      const { initial, snapshots } = this.config.state
-      const name = "ROOT STORE"
-
-      // logging features
-      if (initial) {
-        console.tron.display({ name, value: initialData, preview: "Initial State" })
-      }
-      // log state changes?
-      if (snapshots) {
-        onSnapshot(rootStore, snapshot => {
-          console.tron.display({ name, value: snapshot, preview: "New State" })
-        })
-      }
-
-      // @ts-ignore
-      console.tron.trackMstNode(rootStore)
+      // rootStore = rootStore as RootStore // typescript hack
+      // this.rootStore = rootStore
+      // const { initial, snapshots } = this.config.state
+      // const name = "ROOT STORE"
+      // // logging features
+      // if (initial) {
+      //   console.tron.display({ name, value: initialData, preview: "Initial State" })
+      // }
+      // // log state changes?
+      // if (snapshots) {
+      //   onSnapshot(rootStore, snapshot => {
+      //     console.tron.display({ name, value: snapshot, preview: "New State" })
+      //   })
+      // }
+      // // @ts-ignore
+      // console.tron.trackMstNode(rootStore)
     }
   }
 
@@ -115,18 +110,18 @@ export class Reactotron {
         asyncStorage: this.config.useAsyncStorage ? undefined : false,
       })
 
-      // ignore some chatty `mobx-state-tree` actions
-      const RX = /postProcessSnapshot|@APPLY_SNAPSHOT/
+      // // ignore some chatty `mobx-state-tree` actions
+      // const RX = /postProcessSnapshot|@APPLY_SNAPSHOT/
 
-      // hookup mobx-state-tree middleware
-      Tron.use(
-        mst({
-          filter: event => RX.test(event.name) === false,
-        }),
-      )
+      // // hookup mobx-state-tree middleware
+      // Tron.use(
+      //   mst({
+      //     filter: event => RX.test(event.name) === false,
+      //   }),
+      // )
 
-      // hookup custom command middleware
-      Tron.use(commandMiddleware(() => this.rootStore))
+      // // hookup custom command middleware
+      // Tron.use(commandMiddleware(() => this.rootStore))
 
       // connect to the app
       Tron.connect()
