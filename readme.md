@@ -1,18 +1,10 @@
-<p align="center"><img src="http://ir_public.s3.amazonaws.com/projects/ignite/ignite-bowser-launch-screen.png" alt="logo" width="414px"></p>
+# Ignite Boilerplate "Bowser Jr"
 
-# Ignite IR Boilerplate ("Bowser")
-
-_NOTE: This repo has been renamed from ignite-ir-boilerplate-bowser to ignite-bowser. Although web traffic and git operations for the previous name will be redirected, we recommend you update any links and git urls for this repo._
-
-<a href="https://circleci.com/gh/infinitered/ignite-bowser"><img alt="CircleCI" src="https://circleci.com/gh/infinitered/ignite-bowser.svg?style=svg" /></a>
-
-## Infinite Red's latest and greatest React Native boilerplate
+## Infinite Red's latest and greatest React Native boilerplate, modded by Henry
 
 Once you've installed the [Ignite CLI](https://github.com/infinitered/ignite), you can get started with this boilerplate.
 
-This is the boilerplate that the [Infinite Red](https://infinite.red) team recommends and uses on a day-to-day basis. Prior art includes [Ignite Andross](https://github.com/infinitered/ignite-andross).
-
-Includes:
+The Original Includes:
 
 * React Native
 * React Navigation
@@ -20,6 +12,10 @@ Includes:
 * TypeScript
 * Reactotron (requires 2.x)
 * And more!
+
+Henry's Modification Includes:
+
+* Removing MobX State Tree
 
 To see it in action, check out these [examples](https://github.com/infinitered/ignite-bowser-examples)!
 
@@ -127,7 +123,3 @@ The `ignite` directory stores all things Ignite, including CLI and boilerplate i
 
 * [2017 aka Andross](https://github.com/infinitered/ignite-andross)
 * [2016 aka Ignite 1.0](https://github.com/infinitered/ignite-ir-boilerplate-2016)
-
-## Premium Support
-
-[Ignite CLI](https://infinite.red/ignite), Ignite Andross](https://github.com/infinitered/ignite-andross), and [Ignite Bowser](https://github.com/infinitered/ignite-bowser), as open source projects, are free to use and always will be. [Infinite Red](https://infinite.red/) offers premium Ignite CLI support and general mobile app design/development services. Email us at [hello@infinite.red](mailto:hello@infinite.red) to get in touch with us for more details.
